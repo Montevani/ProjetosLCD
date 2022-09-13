@@ -1,0 +1,486 @@
+Fitter report for piano
+Mon Dec 03 09:57:43 2012
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Fitter Resource Usage Summary
+  6. Input Pins
+  7. Output Pins
+  8. All Package Pins
+  9. I/O Standard
+ 10. Dedicated Inputs I/O
+ 11. Output Pin Default Load For Reported TCO
+ 12. Fitter Resource Utilization by Entity
+ 13. Control Signals
+ 14. Global & Other Fast Signals
+ 15. Non-Global High Fan-Out Signals
+ 16. LAB Macrocells
+ 17. Logic Cell Interconnection
+ 18. Fitter Device Options
+ 19. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------+
+; Fitter Summary                                                       ;
++---------------------------+------------------------------------------+
+; Fitter Status             ; Failed - Mon Dec 03 09:57:43 2012        ;
+; Quartus II 64-Bit Version ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Revision Name             ; piano                                    ;
+; Top-level Entity Name     ; piano                                    ;
+; Family                    ; MAX3000A                                 ;
+; Device                    ; EPM3064ALC44-10                          ;
+; Timing Models             ; Final                                    ;
+; Total macrocells          ; 51 / 64 ( 80 % )                         ;
+; Total pins                ; 15 / 34 ( 44 % )                         ;
++---------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                              ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Option                                                                     ; Setting         ; Default Value ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Device                                                                     ; EPM3064ALC44-10 ;               ;
+; Fitter Effort                                                              ; Standard Fit    ; Auto Fit      ;
+; Use smart compilation                                                      ; Off             ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On              ; On            ;
+; Enable compact report table                                                ; Off             ; Off           ;
+; Optimize Multi-Corner Timing                                               ; Off             ; Off           ;
+; Optimize Timing for ECOs                                                   ; Off             ; Off           ;
+; Regenerate full fit report during ECO compiles                             ; Off             ; Off           ;
+; Optimize IOC Register Placement for Timing                                 ; Normal          ; Normal        ;
+; Limit to One Fitting Attempt                                               ; Off             ; Off           ;
+; Fitter Initial Placement Seed                                              ; 1               ; 1             ;
+; Slow Slew Rate                                                             ; Off             ; Off           ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off             ; Off           ;
++----------------------------------------------------------------------------+-----------------+---------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------+
+; Fitter Resource Usage Summary                   ;
++------------------------------+------------------+
+; Resource                     ; Usage            ;
++------------------------------+------------------+
+; Logic cells                  ; 51 / 64 ( 80 % ) ;
+; Registers                    ; 39 / 64 ( 61 % ) ;
+; Number of pterms used        ; 148              ;
+; I/O pins                     ; 15 / 34 ( 44 % ) ;
+;     -- Clock pins            ; 1 / 2 ( 50 % )   ;
+;     -- Dedicated input pins  ; 0 / 2 ( 0 % )    ;
+;                              ;                  ;
+; Global signals               ; 1                ;
+; Shareable expanders          ; 27 / 64 ( 42 % ) ;
+; Parallel expanders           ; 0 / 60 ( 0 % )   ;
+; Cells using turbo bit        ; 51 / 64 ( 80 % ) ;
+; Maximum fan-out              ; 39               ;
+; Highest non-global fan-out   ; 38               ;
+; Total fan-out                ; 1006             ;
+; Average fan-out              ; 10.82            ;
++------------------------------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                 ;
++-------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+; Name  ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; I/O Standard ; Location assigned by ;
++-------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+; chA   ; 25    ; --       ; 3   ; 11                    ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; chB   ; 26    ; --       ; 3   ; 6                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; chC   ; 18    ; --       ; 2   ; 18                    ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; chD   ; 19    ; --       ; 2   ; 16                    ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; chE   ; 20    ; --       ; 2   ; 17                    ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; chF   ; 21    ; --       ; 2   ; 14                    ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; chG   ; 24    ; --       ; 3   ; 12                    ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; cjk   ; 43    ; --       ; --  ; 39                    ; 0                  ; yes    ; 3.3-V LVTTL  ; User                 ;
+; clk_d ; 40    ; --       ; 4   ; 0                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; rst   ; 28    ; --       ; 3   ; 38                    ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
++-------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                              ;
++------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; Name ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; sai  ; 29    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
++------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                      ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage ; User Assignment ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; 1        ; 0          ; --       ; GND+           ;        ;              ;         ;                 ;
+; 2        ; 1          ; --       ; GND+           ;        ;              ;         ;                 ;
+; 3        ; 2          ; --       ; VCCINT         ; power  ;              ; 3.3V    ;                 ;
+; 4        ; 3          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 5        ; 4          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 6        ; 5          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 7        ; 6          ; --       ; TDI            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 8        ; 7          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 9        ; 8          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 10       ; 9          ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 11       ; 10         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 12       ; 11         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 13       ; 12         ; --       ; TMS            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 14       ; 13         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 15       ; 14         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 16       ; 15         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 17       ; 16         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 18       ; 17         ; --       ; chC            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 19       ; 18         ; --       ; chD            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 20       ; 19         ; --       ; chE            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 21       ; 20         ; --       ; chF            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 22       ; 21         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 23       ; 22         ; --       ; VCCINT         ; power  ;              ; 3.3V    ;                 ;
+; 24       ; 23         ; --       ; chG            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 25       ; 24         ; --       ; chA            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 26       ; 25         ; --       ; chB            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 27       ; 26         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 28       ; 27         ; --       ; rst            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 29       ; 28         ; --       ; sai            ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 30       ; 29         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 31       ; 30         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 32       ; 31         ; --       ; TCK            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 33       ; 32         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 34       ; 33         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 35       ; 34         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 36       ; 35         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 37       ; 36         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 38       ; 37         ; --       ; TDO            ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 39       ; 38         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 40       ; 39         ; --       ; clk_d          ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 41       ; 40         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 42       ; 41         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 43       ; 42         ; --       ; cjk            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 44       ; 43         ; --       ; GND+           ;        ;              ;         ;                 ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++--------------------------------------------------------------------------------------------------+
+; I/O Standard                                                                                     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; I/O Standard ; Input Vref ; Dedicated Input Pins ; Pins in I/O Bank1 ; Pins in I/O Bank2 ; Total ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; 3.3-V LVTTL  ; -          ; 1                    ; 0                 ; 0                 ; 1     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+
+
++--------------------------------------------------------------------+
+; Dedicated Inputs I/O                                               ;
++------+-------+-------+-------+--------------+------------+---------+
+; Name ; Pin # ; Type  ; VCCIO ; I/O Standard ; Input Vref ; Current ;
++------+-------+-------+-------+--------------+------------+---------+
+; cjk  ; 43    ; Input ; --    ; 3.3-V LVTTL  ; -          ; 0 mA    ;
++------+-------+-------+-------+--------------+------------+---------+
+
+
++-----------------------------------------------+
+; Output Pin Default Load For Reported TCO      ;
++--------------+-------+------------------------+
+; I/O Standard ; Load  ; Termination Resistance ;
++--------------+-------+------------------------+
+; 3.3-V LVTTL  ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS ; 10 pF ; Not Available          ;
+; 3.3-V PCI    ; 10 pF ; 25 Ohm (Parallel)      ;
+; 2.5 V        ; 10 pF ; Not Available          ;
++--------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                ;
++--------------------------------+------------+------+----------------------------------+--------------+
+; Compilation Hierarchy Node     ; Macrocells ; Pins ; Full Hierarchy Name              ; Library Name ;
++--------------------------------+------------+------+----------------------------------+--------------+
+; |piano                         ; 51         ; 15   ; |piano                           ; work         ;
+;    |lpm_counter:divisor_rtl_0| ; 36         ; 0    ; |piano|lpm_counter:divisor_rtl_0 ; work         ;
++--------------------------------+------------+------+----------------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                              ;
++-------------+------------+---------+----------------------+--------+----------------------+------------------+
+; Name        ; Location   ; Fan-Out ; Usage                ; Global ; Global Resource Used ; Global Line Name ;
++-------------+------------+---------+----------------------+--------+----------------------+------------------+
+; chC         ; PIN_18     ; 18      ; Async. clear, Preset ; no     ; --                   ; --               ;
+; chD         ; PIN_19     ; 16      ; Async. clear, Preset ; no     ; --                   ; --               ;
+; chE         ; PIN_20     ; 17      ; Async. clear, Preset ; no     ; --                   ; --               ;
+; cjk         ; PIN_43     ; 39      ; Clock                ; yes    ; On                   ; Not Available    ;
+; nota[0]~44  ; Unassigned ; 1       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[0]~45  ; Unassigned ; 2       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[0]~46  ; Unassigned ; 5       ; Async. clear, Preset ; no     ; --                   ; --               ;
+; nota[0]~47  ; Unassigned ; 4       ; Async. clear, Preset ; no     ; --                   ; --               ;
+; nota[0]~48  ; Unassigned ; 1       ; Preset               ; no     ; --                   ; --               ;
+; nota[0]~49  ; Unassigned ; 2       ; Preset               ; no     ; --                   ; --               ;
+; nota[0]~50  ; Unassigned ; 1       ; Preset               ; no     ; --                   ; --               ;
+; nota[1]~70  ; Unassigned ; 1       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[1]~71  ; Unassigned ; 1       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[1]~76  ; Unassigned ; 1       ; Preset               ; no     ; --                   ; --               ;
+; nota[2]~106 ; Unassigned ; 1       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[2]~108 ; Unassigned ; 1       ; Preset               ; no     ; --                   ; --               ;
+; nota[2]~109 ; Unassigned ; 1       ; Preset               ; no     ; --                   ; --               ;
+; nota[2]~110 ; Unassigned ; 1       ; Preset               ; no     ; --                   ; --               ;
+; nota[3]~100 ; Unassigned ; 1       ; Preset               ; no     ; --                   ; --               ;
+; nota[3]~94  ; Unassigned ; 1       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[3]~95  ; Unassigned ; 1       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[3]~96  ; Unassigned ; 1       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[3]~98  ; Unassigned ; 1       ; Preset               ; no     ; --                   ; --               ;
+; nota[3]~99  ; Unassigned ; 1       ; Preset               ; no     ; --                   ; --               ;
+; nota[4]~82  ; Unassigned ; 1       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[4]~83  ; Unassigned ; 1       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[4]~84  ; Unassigned ; 2       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[4]~85  ; Unassigned ; 1       ; Async. clear         ; no     ; --                   ; --               ;
+; nota[4]~86  ; Unassigned ; 1       ; Preset               ; no     ; --                   ; --               ;
+; nota[6]~56  ; Unassigned ; 2       ; Async. clear, Preset ; no     ; --                   ; --               ;
+; nota[6]~57  ; Unassigned ; 2       ; Async. clear, Preset ; no     ; --                   ; --               ;
+; rst         ; PIN_28     ; 38      ; Clock enable         ; no     ; --                   ; --               ;
++-------------+------------+---------+----------------------+--------+----------------------+------------------+
+
+
++---------------------------------------------------------------------+
+; Global & Other Fast Signals                                         ;
++------+----------+---------+----------------------+------------------+
+; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
++------+----------+---------+----------------------+------------------+
+; cjk  ; PIN_43   ; 39      ; On                   ; Not Available    ;
++------+----------+---------+----------------------+------------------+
+
+
++----------------------------------------------+
+; Non-Global High Fan-Out Signals              ;
++------------------------------------+---------+
+; Name                               ; Fan-Out ;
++------------------------------------+---------+
+; rst                                ; 38      ;
+; lpm_counter:divisor_rtl_0|dffs[7]  ; 33      ;
+; lpm_counter:divisor_rtl_0|dffs[0]  ; 32      ;
+; lpm_counter:divisor_rtl_0|dffs[8]  ; 32      ;
+; lpm_counter:divisor_rtl_0|dffs[9]  ; 31      ;
+; lpm_counter:divisor_rtl_0|dffs[1]  ; 31      ;
+; lpm_counter:divisor_rtl_0|dffs[10] ; 30      ;
+; lpm_counter:divisor_rtl_0|dffs[2]  ; 30      ;
+; lpm_counter:divisor_rtl_0|dffs[11] ; 29      ;
+; lpm_counter:divisor_rtl_0|dffs[3]  ; 29      ;
+; lpm_counter:divisor_rtl_0|dffs[12] ; 28      ;
+; lpm_counter:divisor_rtl_0|dffs[4]  ; 28      ;
+; lpm_counter:divisor_rtl_0|dffs[13] ; 27      ;
+; lpm_counter:divisor_rtl_0|dffs[5]  ; 27      ;
+; lpm_counter:divisor_rtl_0|dffs[14] ; 26      ;
+; lpm_counter:divisor_rtl_0|dffs[6]  ; 26      ;
+; lpm_counter:divisor_rtl_0|dffs[15] ; 25      ;
+; lpm_counter:divisor_rtl_0|dffs[16] ; 24      ;
+; lpm_counter:divisor_rtl_0|dffs[17] ; 23      ;
+; lpm_counter:divisor_rtl_0|dffs[18] ; 22      ;
+; lpm_counter:divisor_rtl_0|dffs[19] ; 21      ;
+; lpm_counter:divisor_rtl_0|dffs[20] ; 20      ;
+; lpm_counter:divisor_rtl_0|dffs[21] ; 19      ;
+; chC                                ; 18      ;
+; lpm_counter:divisor_rtl_0|dffs[22] ; 18      ;
+; chE                                ; 17      ;
+; lpm_counter:divisor_rtl_0|dffs[23] ; 17      ;
+; chD                                ; 16      ;
+; lpm_counter:divisor_rtl_0|dffs[24] ; 16      ;
+; lpm_counter:divisor_rtl_0|dffs[25] ; 15      ;
+; chF                                ; 14      ;
+; lpm_counter:divisor_rtl_0|dffs[26] ; 14      ;
+; lpm_counter:divisor_rtl_0|dffs[27] ; 13      ;
+; chG                                ; 12      ;
+; lpm_counter:divisor_rtl_0|dffs[28] ; 12      ;
+; chA                                ; 11      ;
+; lpm_counter:divisor_rtl_0|dffs[29] ; 11      ;
+; lpm_counter:divisor_rtl_0|dffs[30] ; 10      ;
+; Equal0~9sexp1bal                   ; 9       ;
+; Equal0~33                          ; 9       ;
+; Equal0~29                          ; 9       ;
+; Equal0~25                          ; 9       ;
+; Equal0~21                          ; 9       ;
+; Equal0~17                          ; 9       ;
+; chB                                ; 6       ;
+; nota[0]~46                         ; 5       ;
+; nota[0]~47                         ; 4       ;
+; sai~reg0                           ; 3       ;
+; nota[2]                            ; 2       ;
+; nota[3]                            ; 2       ;
+; nota[4]~84                         ; 2       ;
+; nota[4]                            ; 2       ;
+; nota[1]                            ; 2       ;
+; nota[5]                            ; 2       ;
+; nota[6]~57                         ; 2       ;
+; nota[6]~56                         ; 2       ;
+; nota[6]                            ; 2       ;
+; nota[0]~49                         ; 2       ;
+; nota[0]~45                         ; 2       ;
+; nota[0]                            ; 2       ;
+; sai~5                              ; 1       ;
+; lpm_counter:divisor_rtl_0|_~46     ; 1       ;
+; lpm_counter:divisor_rtl_0|_~42     ; 1       ;
+; lpm_counter:divisor_rtl_0|_~38     ; 1       ;
+; lpm_counter:divisor_rtl_0|_~34     ; 1       ;
+; lpm_counter:divisor_rtl_0|_~30     ; 1       ;
+; nota[2]~110                        ; 1       ;
+; nota[2]~109                        ; 1       ;
+; nota[2]~108                        ; 1       ;
+; nota[2]~106                        ; 1       ;
+; nota[3]~100                        ; 1       ;
+; nota[3]~99                         ; 1       ;
+; nota[3]~98                         ; 1       ;
+; nota[3]~96                         ; 1       ;
+; nota[3]~95                         ; 1       ;
+; nota[3]~94                         ; 1       ;
+; nota[4]~86                         ; 1       ;
+; nota[4]~85                         ; 1       ;
+; nota[4]~83                         ; 1       ;
+; nota[4]~82                         ; 1       ;
+; nota[1]~76                         ; 1       ;
+; nota[1]~71                         ; 1       ;
+; nota[1]~70                         ; 1       ;
+; nota[0]~50                         ; 1       ;
+; nota[0]~48                         ; 1       ;
+; nota[0]~44                         ; 1       ;
++------------------------------------+---------+
+
+
++----------------------------------------------------------------------+
+; LAB Macrocells                                                       ;
++----------------------------------------+-----------------------------+
+; Number of Macrocells  (Average = 0.25) ; Number of LABs  (Total = 1) ;
++----------------------------------------+-----------------------------+
+; 0                                      ; 3                           ;
+; 1                                      ; 1                           ;
++----------------------------------------+-----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Logic Cell Interconnection                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+; LAB ; Logic Cell ; Input                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Output               ;
++-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+;  A  ; LC41       ; cjk, sai~5, Equal0~17, Equal0~21, Equal0~25, Equal0~29, Equal0~33, lpm_counter:divisor_rtl_0|dffs[30], lpm_counter:divisor_rtl_0|dffs[29], lpm_counter:divisor_rtl_0|dffs[28], lpm_counter:divisor_rtl_0|dffs[27], lpm_counter:divisor_rtl_0|dffs[26], lpm_counter:divisor_rtl_0|dffs[25], lpm_counter:divisor_rtl_0|dffs[24], lpm_counter:divisor_rtl_0|dffs[23], lpm_counter:divisor_rtl_0|dffs[22], lpm_counter:divisor_rtl_0|dffs[21], lpm_counter:divisor_rtl_0|dffs[20], lpm_counter:divisor_rtl_0|dffs[19], lpm_counter:divisor_rtl_0|dffs[18], lpm_counter:divisor_rtl_0|dffs[17], lpm_counter:divisor_rtl_0|dffs[16], lpm_counter:divisor_rtl_0|dffs[15], lpm_counter:divisor_rtl_0|dffs[14], lpm_counter:divisor_rtl_0|dffs[13], lpm_counter:divisor_rtl_0|dffs[12], lpm_counter:divisor_rtl_0|dffs[11], lpm_counter:divisor_rtl_0|dffs[10], lpm_counter:divisor_rtl_0|dffs[9], lpm_counter:divisor_rtl_0|dffs[8], lpm_counter:divisor_rtl_0|dffs[7], sai~reg0, Equal0~9sexp1bal ; sai~5, sai~reg0, sai ;
++-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+
+
++---------------------------------------------------------------+
+; Fitter Device Options                                         ;
++----------------------------------------------+----------------+
+; Option                                       ; Setting        ;
++----------------------------------------------+----------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off            ;
+; Enable device-wide reset (DEV_CLRn)          ; Off            ;
+; Enable device-wide output enable (DEV_OE)    ; Off            ;
+; Enable INIT_DONE output                      ; Off            ;
+; Configuration scheme                         ; Passive Serial ;
+; Security bit                                 ; Off            ;
+; Base pin-out file on sameframe device        ; Off            ;
++----------------------------------------------+----------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Fitter
+    Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
+    Info: Processing started: Mon Dec 03 09:57:43 2012
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off piano -c piano
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (119006): Selected device EPM3064ALC44-10 for design "piano"
+Error (163103): Can't pack LABs
+Error (163104): Can't place node "Equal0~17" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 22
+Error (163104): Can't place node "Equal0~21" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 22
+Error (163104): Can't place node "Equal0~25" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 22
+Error (163104): Can't place node "Equal0~29" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 22
+Error (163104): Can't place node "Equal0~33" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 22
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[1]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "nota[0]" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 21
+Error (163104): Can't place node "nota[6]" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 21
+Error (163104): Can't place node "nota[5]" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 21
+Error (163104): Can't place node "nota[1]" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 21
+Error (163104): Can't place node "nota[4]" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 21
+Error (163104): Can't place node "nota[3]" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 21
+Error (163104): Can't place node "nota[2]" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 21
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[2]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|_~30" of type max_mcell
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[3]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|_~34" of type max_mcell
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[4]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|_~38" of type max_mcell
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[5]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|_~42" of type max_mcell
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[6]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|_~46" of type max_mcell
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[7]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[8]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[9]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[10]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[11]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[12]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[13]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[14]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[15]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[16]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[17]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[18]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[19]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[20]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[21]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[22]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[23]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[24]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[25]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[26]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[27]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[28]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[29]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[30]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "lpm_counter:divisor_rtl_0|dffs[0]" of type max_mcell File: c:/altera/12.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 269
+Error (163104): Can't place node "sai~5" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 5
+Error (163104): Can't place node "Equal0~9sexp1bal" of type max_mcell File: C:/Users/User/Documents/Projeto LCD/314ano/piano.vhd Line: 22
+Error (163000): Cannot find fit.
+Error: Quartus II 64-Bit Fitter was unsuccessful. 52 errors, 1 warning
+    Error: Peak virtual memory: 397 megabytes
+    Error: Processing ended: Mon Dec 03 09:57:43 2012
+    Error: Elapsed time: 00:00:00
+    Error: Total CPU time (on all processors): 00:00:01
+
+

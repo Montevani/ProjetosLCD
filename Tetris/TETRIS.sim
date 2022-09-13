@@ -1,0 +1,59 @@
+%SIGNAL
+PIN  17 =  Q0 
+PIN  16 =  Q1 
+PIN  15 =  Q2 
+PIN  14 =  Q3 
+PIN  18 =  carry 
+PIN   1 =  clk 
+PIN   2 =  clr 
+PIN   3 =  dir 
+PIN  11 = !oe 
+%END
+
+%FIELD
+FIELD count = Q3,Q2,Q1,Q0
+FIELD mode = clr,dir
+%END
+
+%EQUATION
+Q0.d  =>
+    !Q0 & !Q1 & !Q2 & Q3 & !clr
+  # !Q0 & !Q3 & !clr
+
+Q1.d  =>
+    !Q0 & !Q1 & !Q2 & Q3 & !clr & dir
+  # Q0 & !Q1 & !Q3 & !clr & !dir
+  # !Q0 & Q1 & !Q3 & !clr & !dir
+  # Q0 & Q1 & !Q3 & !clr & dir
+  # !Q0 & !Q1 & Q2 & !Q3 & !clr & dir
+
+Q2.d  =>
+    !Q0 & !Q1 & !Q2 & Q3 & !clr & dir
+  # Q0 & Q1 & !Q2 & !Q3 & !clr & !dir
+  # !Q1 & Q2 & !Q3 & !clr & !dir
+  # Q0 & Q2 & !Q3 & !clr & dir
+  # !Q0 & Q1 & Q2 & !Q3 & !clr
+
+Q3.d  =>
+    Q0 & !Q1 & !Q2 & Q3 & !clr & dir
+  # !Q0 & !Q1 & !Q2 & !Q3 & !clr & dir
+  # Q0 & Q1 & Q2 & !Q3 & !clr & !dir
+  # !Q0 & !Q1 & !Q2 & Q3 & !clr & !dir
+
+carry =>
+    !Q0 & !Q1 & !Q2 & !Q3 & !clr & dir
+  # Q0 & !Q1 & !Q2 & Q3 & !clr & !dir
+
+clear =>
+    clr
+
+down =>
+    !clr & dir
+
+up =>
+    !clr & !dir
+
+carry.oe  =>
+    1 
+
+%END
